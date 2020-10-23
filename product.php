@@ -1,5 +1,5 @@
 
-
+<?php include ('db.php'); session_start();?> 
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -140,36 +140,13 @@
                 <a class="aa-cart-link" href="#">
                   <span class="fa fa-shopping-basket"></span>
                   <span class="aa-cart-title"><a href="cart.php">SHOPPING CART</a></span>
-                  <span class="aa-cart-notify">2</span>
+                  <span class="aa-cart-notify"></span>
                 </a>
                 <div class="aa-cartbox-summary">
                   <ul>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src="img/woman-small-2.jpg" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Product Name</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src="img/woman-small-1.jpg" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Product Name</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>                    
-                    <li>
-                      <span class="aa-cartbox-total-title">
-                        Total
-                      </span>
-                      <span class="aa-cartbox-total-price">
-                        $500
-                      </span>
-                    </li>
+                    
                   </ul>
-                  <a class="aa-cartbox-checkout aa-primary-btn" href="#">Checkout</a>
+                  
                 </div>
               </div>
               <!-- / cart box -->
@@ -371,6 +348,14 @@
               </div>
             </div>
             <div class='aa-product-catg-body'>
+            <script>
+            function addtocart()
+            {
+              alert("Added to cart successfully !");
+            }
+            </script>
+           
+
             
                 <!-- start single product item -->
                 
@@ -390,13 +375,16 @@
                       
                       
       
-                    echo "<ul class='aa-product-catg'><li><figure></br><td>
+                    echo "<form action='added.php' method='POST'><ul class='aa-product-catg'><li><figure></br><td>
                           <a class='aa-product-img' href='#'><img src='img/women/girl-1.png' alt='polo shirt img'></a>
-                          <form action='addtocart.php' method='post'><a class='aa-add-card-btn' href='#' ><span class='fa fa-shopping-cart'></span>Add To Cart</a></form>
+                          <a class='aa-add-card-btn'><span class='fa fa-shopping-cart' ></span><input class='button' name='save' type='submit' value='Add' /></a>
                           <figcaption>";
-                          echo "<h4 class='aa-product-title'><a href='#'>" .$row["name"]."</a></h4>";
-                          echo "<span class='aa-product-price'>".$row["price"]."</span><span class='aa-product-price'><del>$65.50</del></span>";
-                          echo "<p class='aa-product-descrip'></p>";
+                          echo "<h4 class='aa-product-title'><a href='#'><center><input type='text' name='name' value='$row[name]'  style='border-top-style: hidden;border-right-style: hidden;border-left-style: hidden;border-bottom-style: hidden;'/></center></a></h4>";
+                          echo "<span class='aa-product-price'>$<input type='text' name='price' value='$row[price]'  style='border-top-style: hidden;border-right-style: hidden;border-left-style: hidden;border-bottom-style: hidden;'/></span><span class='aa-product-price'><del>$65.50</del></span>";
+                          echo "<p class='aa-product-descrip'><input type='text' name='description' value='$row[description]'/></p>";
+                          echo "<input type='hidden'  name='tags[]'  value='$row[tags]'>";
+                          echo "<input type='hidden'  name='image' value='$row[image]'>";
+                          echo "<input type='hidden'  name='category' value='$row[category]' >";
                           echo " </td>
                           
                           </figcaption></figure>";
@@ -407,7 +395,7 @@
                         </div>
                         
                         <span class='aa-badge aa-sale' href='#'>SALE!</span>
-                      </li></ul> ";
+                      </li></ul></form> ";
                           
                            ?>
                     <?php
@@ -541,13 +529,13 @@
             <div class="aa-sidebar-widget">
               <h3>Tags</h3>
               <div class="tag-cloud">
-                <a href="#">Fashion</a>
-                <a href="#">Ecommerce</a>
-                <a href="#">Shop</a>
-                <a href="#">Hand Bag</a>
-                <a href="#">Laptop</a>
-                <a href="#">Head Phone</a>
-                <a href="#">Pen Drive</a>
+              <a href="ftag.php">Fashion</a>
+                <a href="etag.php">Ecommerce</a>
+                <a href="stag.php">Shop</a>
+                <a href="htag.php">Hand Bag</a>
+                <a href="ltag.php">Laptop</a>
+                <a href="headtag.php">Head Phone</a>
+                <a href="ptag.php">Pen Drive</a>
               </div>
             </div>
             <!-- single sidebar -->
