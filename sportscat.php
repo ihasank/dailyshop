@@ -541,13 +541,13 @@
             <div class="aa-sidebar-widget">
               <h3>Tags</h3>
               <div class="tag-cloud">
-                <a href="#">Fashion</a>
-                <a href="#">Ecommerce</a>
-                <a href="#">Shop</a>
-                <a href="#">Hand Bag</a>
-                <a href="#">Laptop</a>
-                <a href="#">Head Phone</a>
-                <a href="#">Pen Drive</a>
+                <a href="ftag.php">Fashion</a>
+                <a href="etag.php">Ecommerce</a>
+                <a href="stag.php">Shop</a>
+                <a href="htag.php">Hand Bag</a>
+                <a href="ltag.php">Laptop</a>
+                <a href="headtag.php">Head Phone</a>
+                <a href="ptag.php">Pen Drive</a>
               </div>
             </div>
             <!-- single sidebar -->
