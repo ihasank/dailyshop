@@ -359,21 +359,22 @@
                     </thead>
                     <tbody>
                     <?php 
+                    $v=1;
                     include ('db.php');
-                    $sql = "SELECT * FROM products";
+                    $sql = "SELECT * FROM cart";
                     $result = mysqli_query($conn, $sql);
-                    $v=2;
+                   
                   ?>
                   <?php while($row = mysqli_fetch_assoc($result)) 
                   {
                     {
                       echo "<tr>";
-                      echo "<td><a class='remove' href='#'><fa class='fa fa-close'></fa></a></td>";
+                      echo "<td>".$v++."</fa></a></td>";
                       echo  "<td><a href='#'><img src='img/man/polo-shirt-1.png' alt='img'></a></td>";
                       echo  "<td><a class='aa-cart-title' href='#'>".$row["name"]."</a></td>";
                       echo "<td>".$row["price"]."</td>";
                       echo  "<td><input class='aa-cart-quantity' type='number' value='1'></td>";
-                      echo "<td>".$row["price"]."</td>"; 
+                      echo "<td>12</td>"; 
                       echo "</tr>";
                     }}
                     ?>
